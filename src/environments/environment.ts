@@ -4,5 +4,9 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  GIPHY_API_KEY: '77d001b0a6f54a06998211987ce020bd',
+  GIPHY_API_URL: 'http://api.giphy.com/v1/gifs/search?'
+
+
 };

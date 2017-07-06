@@ -1,0 +1,7 @@
+    <input [(ngModel)]="searchQuery" placeholder="enter keyword here!" required>
+
+<button (click)="searchGif(searchQuery)">find</button>
+<div *ngIf="searching">Searching</div>
+<div *ngFor="let gif of gifs" class="gif-container">
+ <img src={{gif}}>
+  </div>
