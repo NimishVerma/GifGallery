@@ -11,7 +11,7 @@ export class GifService{
     private URL: string=this.API_URL+'api_key='+this.API_KEY+'&q=';
     constructor( private _http: Http){}
         getGif(query){
-        return this._http.get(this.URL+query)
+        return this._http.get(this.URL+query+'&limit=7')
         .map(res => res.json());
     }
 }

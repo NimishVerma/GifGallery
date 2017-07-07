@@ -1,7 +1,31 @@
-    <input [(ngModel)]="searchQuery" placeholder="enter keyword here!" required>
+<md-card>
+  <md-input-container>
+    <input class="search" mdInput [(ngModel)]="searchQuery"
+    name="search" placeholder="Search for images">
+  </md-input-container>
+  <br>
+  <button (click)="searchGif(searchQuery)"
+    md-raised-button class="searchButton" type="button">Find GIFs</button>
+</md-card>
 
-<button (click)="searchGif(searchQuery)">find</button>
-<div *ngIf="searching">Searching</div>
-<div *ngFor="let gif of gifs" class="gif-container">
- <img src={{gif}}>
-  </div>
+<div *ngIf="searching">
+  <md-progress-bar mode="indeterminate"></md-progress-bar>
+</div>
+
+<md-card>
+  <h4 *ngIf="imagesFound" md-subeader>Results</h4>
+  <masonry [useImagesLoaded]="true">
+    <masonry-brick  *ngFor="let gif of gifs" class=gif-container>
+      <md-card>
+        <a href="/" target="_bank">
+          <md-card-header>
+            <div class="avatar" md-card-avatar [ngStyle]="{'background-image':'url('+gif +')', 'background-size':'40px 40px'}"></div>
+          
+          </md-card-header>
+          <img md-card-image src="{{gif}}">
+         </a>
+      </md-card>
+      <br><br>
+    </masonry-brick>
+  </masonry>
+</md-card>

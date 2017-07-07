@@ -9,7 +9,7 @@ export class GifListComponent implements OnInit {
   gifs : any[]
   gifsFound : boolean=false;
   searching : boolean =false;
-  handleSuccess(data){
+  handleSuccess(data){  
     this.gifsFound= true;
     this.gifs=data.data.map(function(obj){return obj.images['fixed_height']['url'];});
     console.log(data.hits)
