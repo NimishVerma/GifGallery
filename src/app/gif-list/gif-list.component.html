@@ -3,6 +3,7 @@
     <input class="search" mdInput [(ngModel)]="searchQuery"
     name="search" placeholder="Search for images">
   </md-input-container>
+  <div class="credits"><h2>We use <a href="https://developers.giphy.com/docs/">Giphy API  <img class="dev-logo" src="https://developers.giphy.com/static/img/dev-logo-lg.7404c00322a8.gif"></a></h2></div>
   <br>
   <button (click)="searchGif(searchQuery)"
     md-raised-button class="searchButton" type="button">Find GIFs</button>
@@ -10,22 +11,19 @@
 
 <div *ngIf="searching">
   <md-progress-bar mode="indeterminate"></md-progress-bar>
+  Searching
 </div>
 
 <md-card>
-  <h4 *ngIf="imagesFound" md-subeader>Results</h4>
-  <masonry [useImagesLoaded]="true">
-    <masonry-brick  *ngFor="let gif of gifs" class=gif-container>
+
+  <h4 *ngIf="gifFound" md-subeader>Results</h4>
+  <masonry coloumn-width="200" [useImagesLoaded]="true">
+    <masonry-brick  *ngFor="let gif of gifs" class="  gif-container">
       <md-card>
         <a href="/" target="_bank">
-          <md-card-header>
-            <div class="avatar" md-card-avatar [ngStyle]="{'background-image':'url('+gif +')', 'background-size':'40px 40px'}"></div>
-          
-          </md-card-header>
           <img md-card-image src="{{gif}}">
          </a>
       </md-card>
-      <br><br>
-    </masonry-brick>
+     </masonry-brick>
   </masonry>
 </md-card>

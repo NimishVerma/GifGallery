@@ -20,7 +20,7 @@
 }
 
 .gif-container{
-  width: 300px;
+  width: 300px  ;
   min-height: 100px;
   max-width: 300px;
   margin: 8px;
@@ -32,4 +32,21 @@
 .results{
   padding: 8px;
   margin-bottom: 12px;
+}
+md-input-container{
+  background-color: rgba(200,200,200,0.6);
+}
+.searchButton[_ngcontent-c1]{
+ background-color: #7b1fa2 
+}
+  img.dev-logo {
+    width: 232px;
+}
+.credits{
+  float:right;
+  
+}
+.credits>h2>a{
+  color:yellowgreen;
+
 }

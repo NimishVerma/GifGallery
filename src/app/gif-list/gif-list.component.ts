@@ -11,8 +11,9 @@ export class GifListComponent implements OnInit {
   searching : boolean =false;
   handleSuccess(data){  
     this.gifsFound= true;
-    this.gifs=data.data.map(function(obj){return obj.images['fixed_height']['url'];});
+    this.gifs=data.data.map(function(obj){return obj.images['fixed_height_still']['url'];});
     console.log(data.hits)
+    this.gifsFound = true;
   }
   handleError(error){
     console.log(error)

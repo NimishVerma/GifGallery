@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+body{
+    background-color: #1A1A1A;
+    color:#7b1fa2;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bolder;
+}
