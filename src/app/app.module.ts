@@ -8,6 +8,8 @@ import {GifService} from './shared/gif.service';
 import { MaterialModule } from '@angular/material';
 import { MasonryModule } from 'angular2-masonry';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import * as $ from 'jquery';
+
 @NgModule({
   declarations: [
     AppComponent,

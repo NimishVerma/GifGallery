@@ -20,7 +20,7 @@
 }
 
 .gif-container{
-  width: 300px  ;
+  width: 250px  ;
   min-height: 100px;
   max-width: 300px;
   margin: 8px;
@@ -50,3 +50,11 @@ md-input-container{
   color:yellowgreen;
 
 }
+.credits>h2>a:hover{
+  text-decoration: none;
+  color:red;
+}
+.md-card-content{
+  text-align: center;
+  color:white;
+  }

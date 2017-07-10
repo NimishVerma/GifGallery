@@ -9,14 +9,35 @@ export class GifListComponent implements OnInit {
   gifs : any[]
   gifsFound : boolean=false;
   searching : boolean =false;
-  handleSuccess(data){  
+  obj :any={};
+  handleSuccess(data){
+     
+    this.gifs=[] 
+     if(data.pagination['total_count']>0 ){
     this.gifsFound= true;
-    this.gifs=data.data.map(function(obj){return obj.images['fixed_height_still']['url'];});
-    console.log(data.hits)
-    this.gifsFound = true;
+    var arr = data.data
+    console.log(arr)
+    for (var i = 0, len = arr.length; i < len; i++) {
+    let value = arr[i]
+    var a = value.url;
+    var b = value.images.fixed_height.url;
+    var c = value.images.fixed_height.width;
+     var d = value.images.fixed_height.height;
+    this.gifs.push({gif:a, url:b,width:c,height:d})
+    
+  }
+  console.log(this.obj);
+  console.log(this.gifs)
+  this.gifsFound = true;
+     
+    
+}
+else{
+  $("#openModalButton").click();
+}
   }
   handleError(error){
-    console.log(error)
+    console.log(error)    
 
   }
   constructor(private _gifService : GifService) { }

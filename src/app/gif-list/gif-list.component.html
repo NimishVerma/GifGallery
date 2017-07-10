@@ -13,17 +13,36 @@
   <md-progress-bar mode="indeterminate"></md-progress-bar>
   Searching
 </div>
-
-<md-card>
-
   <h4 *ngIf="gifFound" md-subeader>Results</h4>
-  <masonry coloumn-width="200" [useImagesLoaded]="true">
-    <masonry-brick  *ngFor="let gif of gifs" class="  gif-container">
-      <md-card>
-        <a href="/" target="_bank">
-          <img md-card-image src="{{gif}}">
+    <masonry [useImagesLoaded]="true" class=col-md-offset-1>
+    <masonry-brick  *ngFor="let gif of gifs" class="gif-container">
+      
+        <a href="{{gif.gif}}" target="_bank">
+          <img md-card-image src="{{gif.url}}">
          </a>
-      </md-card>
+      <div class="md-card-content" style="color:white;">Size: {{gif.width}}x{{gif.height}}</div>
+      
      </masonry-brick>
   </masonry>
-</md-card>
+
+  <button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+  <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">No GIFs Found!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Kindly enter a valid keyword.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
